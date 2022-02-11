@@ -1,29 +1,37 @@
 package com.artmani.sod.items;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import com.artmani.sod.subject.MathSubject;
-import lombok.Getter;
-import lombok.Setter;
 
 public class Student {
+    int groupID;
 
     @Getter
     int id;
 
-    @Setter
     @Getter
-    Group group;
+    int groupNumber;
+
     @Getter
-    String firstName;
+    String firstname;
     @Getter
-    String lastName;
+    String lastname;
     @Getter
     int course;
     @Getter
     HashMap<String, ArrayList<Integer>> marks = new HashMap<>();
 
-    public Student(int id, Group group, String firstName, String lastName, int course, HashMap<String, ArrayList<Integer>> marks) {
+    @Getter
+    Group group;
+
+    public Student(int id, int groupNumber, String firstName, String lastName, int course, HashMap<String, ArrayList<Integer>> marks) {
 
     }
+
+    public void getMarks(String subject) {
+        
+    }
+
 }

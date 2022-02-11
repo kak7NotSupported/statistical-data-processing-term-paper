@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "group": 200,
+    "groupNumber": 200,
     "firstname": "Artem",
     "lastname": "Ivanov",
     "course": 3,
@@ -22,7 +22,7 @@
   },
   {
     "id": 2,
-    "group": 205,
+    "groupNumber": 205,
     "firstname": "Danya",
     "lastname": "Grechka",
     "course": 3,
@@ -43,9 +43,9 @@
   },
   {
     "id": 3,
-    "group": 205,
+    "groupNumber": 205,
     "firstname": "Katya",
-    "lastname": "Popka",
+    "lastname": "Polka",
     "course": 3,
     "marks": {
       "math": [
