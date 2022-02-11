@@ -53,7 +53,6 @@ public class Main {
             Student studentObj = new Gson().fromJson(student.toString(), Student.class);
             students.add(studentObj);
         }
-
     }
 
     public static void syncGroups() {

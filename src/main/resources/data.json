@@ -64,5 +64,26 @@
         3
       ]
     }
+  },
+  {
+    "id": 4,
+    "groupNumber": 105,
+    "firstname": "Никита",
+    "lastname": "Летвинков",
+    "course": 3,
+    "marks": {
+      "math": [
+        4,
+        4,
+        3,
+        3,
+        5
+      ],
+      "databases": [
+        4,
+        3,
+        3
+      ]
+    }
   }
 ]

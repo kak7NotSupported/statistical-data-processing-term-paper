@@ -13,14 +13,9 @@ apply plugin: 'java'
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.artmani.sod.Main'
+                'Main-Class': 'com.artmani.sod.Main',
+                'Class-Path': '/libs/a.jar'
         )
-    }
-}
-
-jar {
-    manifest {
-        attributes 'Class-Path': '/libs/a.jar'
     }
 }
 
