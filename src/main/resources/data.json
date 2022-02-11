@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "group": 200,
+    "firstname": "Artem",
+    "lastname": "Ivanov",
+    "course": 3,
+    "marks": {
+      "math": [
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "databases": [
+        4,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "group": 205,
+    "firstname": "Danya",
+    "lastname": "Grechka",
+    "course": 3,
+    "marks": {
+      "math": [
+        4,
+        4,
+        3,
+        3,
+        5
+      ],
+      "databases": [
+        4,
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "group": 205,
+    "firstname": "Katya",
+    "lastname": "Popka",
+    "course": 3,
+    "marks": {
+      "math": [
+        4,
+        4,
+        3,
+        3,
+        5
+      ],
+      "databases": [
+        4,
+        3,
+        3
+      ]
+    }
+  }
+]
