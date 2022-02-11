@@ -30,7 +30,10 @@ public class Main {
         }
 
         for (Group g : Group.groups) {
-            System.out.println("\nGroup: " + g.getId() + "\nStudents: "+ g.getStudents());
+            System.out.println("\nGroup: #" + g.getId());
+            for (Student s : g.getStudents()) {
+                System.out.println("- " + s.getLastname() + " " + s.getFirstname());
+            }
         }
 
     }
