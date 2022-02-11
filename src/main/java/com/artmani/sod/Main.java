@@ -24,11 +24,12 @@ public class Main {
         /**
          * DEBUG
          */
+
         for (var s : students) {
             System.out.println(s.getLastname());
         }
 
-        for (var g : Group.groups) {
+        for (Group g : Group.groups) {
             System.out.println("\nGroup: " + g.getId() + "\nStudents: "+ g.getStudents());
         }
 
@@ -39,7 +40,9 @@ public class Main {
          * Импортирует всех студентов из jsonки в объекты, затем в ArrayList
          */
         String path = new File("").getAbsolutePath();
+        System.out.println(path);
         path = path + "\\src\\main\\resources\\data.json";
+        System.out.println(path);
 
         var s = new Gson().fromJson(readFileAsString(path), JsonArray.class);
 

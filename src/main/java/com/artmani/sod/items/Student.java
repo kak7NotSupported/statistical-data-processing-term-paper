@@ -26,6 +26,7 @@ public class Student {
     @Getter
     Group group;
 
+
     public Student(int id, int groupNumber, String firstName, String lastName, int course, HashMap<String, ArrayList<Integer>> marks) {
 
     }
