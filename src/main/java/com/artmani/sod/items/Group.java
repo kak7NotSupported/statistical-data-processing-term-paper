@@ -1,5 +1,6 @@
 package com.artmani.sod.items;
 
+import javafx.scene.Parent;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Group {
     @Getter
     ArrayList<Student> students = new ArrayList<>();
 
+
     public Group(int number) {
         id = number;
         tryToAddToList(number);
@@ -26,6 +28,7 @@ public class Group {
         if (!this.students.contains(student)) {
             this.students.add(student);
         }
+
     }
 
     public static Group getGroupByID(int id) {

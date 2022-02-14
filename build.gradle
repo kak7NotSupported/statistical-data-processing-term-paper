@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
 group 'com.artmani'
@@ -17,6 +19,11 @@ jar {
                 'Class-Path': '/libs/a.jar'
         )
     }
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls' ]
 }
 
 tasks.withType(JavaCompile) {
