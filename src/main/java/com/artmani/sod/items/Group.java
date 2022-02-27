@@ -1,6 +1,5 @@
 package com.artmani.sod.items;
 
-import javafx.scene.Parent;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -25,8 +24,8 @@ public class Group {
         /**
          * Добавляет студента в группу, если его там нет
          */
-        if (!this.students.contains(student)) {
-            this.students.add(student);
+        if (!students.contains(student)) {
+            students.add(student);
         }
 
     }
@@ -41,6 +40,30 @@ public class Group {
             }
         }
         return null;
+    }
+
+    public Float getAvrgMark(String subject) {
+        var marks = new ArrayList<Float>();
+        float groupMarks = 0f;
+        for (Student s :getStudents()) {
+            float avrgMark = s.getAvrgMarks(subject);
+            groupMarks = groupMarks + avrgMark;
+            marks.add(s.getAvrgMarks(subject));
+        }
+        return groupMarks / marks.size();
+
+    }
+
+    public Float getAvrgMarksCount(String subject){
+        ArrayList<Float> marks = new ArrayList<Float>();
+        float groupMarks = 0f;
+        for (Student s: getStudents()){
+            float avrgMark = s.getAvrgMarks(subject);
+            groupMarks = groupMarks + avrgMark;
+            marks.add(avrgMark);
+        }
+
+        return groupMarks / marks.size();
     }
 
     private void tryToAddToList(int number) {

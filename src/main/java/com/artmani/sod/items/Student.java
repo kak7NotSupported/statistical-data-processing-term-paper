@@ -31,8 +31,24 @@ public class Student {
 
     }
 
-    public void getMarks(String subject) {
-        
+    public Integer getMarksCount(String subject){
+        return marks.get(subject).size();
     }
+
+
+    public Float getAvrgMarks(String subject) {
+
+        float mark = 0;
+        for (Integer a: marks.get(subject)){
+            mark = mark + a;
+        }
+        return mark / getMarksCount(subject);
+
+    }
+
+    public String getFullName() {
+        return getFirstname() + " " + getLastname();
+    }
+
 
 }

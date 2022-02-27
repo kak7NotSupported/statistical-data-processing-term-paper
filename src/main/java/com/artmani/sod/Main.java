@@ -5,10 +5,6 @@ import com.artmani.sod.items.Student;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,13 +13,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Main extends Application {
+public class Main {
 
     public static ArrayList<Student> students = new ArrayList<>();
 
     public static void main(String[] args) {
+
         Main.studentsImport();
         Main.syncGroups();
+        new Gui();
 
         /**
          * DEBUG
@@ -85,24 +83,6 @@ public class Main extends Application {
             e.printStackTrace();
             return data;
         }
-    }
-
-    @Override
-    public void start(Stage stage) {
-
-        // установка надписи
-        Text text = new javafx.scene.text.Text("asd");
-        text.setLayoutY(80);    // установка положения надписи по оси Y
-        text.setLayoutX(80);   // установка положения надписи по оси X
-
-        javafx.scene.Group group = new javafx.scene.Group(text);
-
-        Scene scene = new Scene(group);
-        stage.setScene(scene);
-        stage.setTitle("JavaFX Application");
-        stage.setWidth(300);
-        stage.setHeight(250);
-        stage.show();
     }
 
 }
