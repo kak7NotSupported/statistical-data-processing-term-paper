@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "group": 200,
+  "firstname": "Artem",
+  "lastname": "Ivanov",
+  "course": 3,
+  "marks": {
+    "math": [
+      4,
+      4,
+      4,
+      4,
+      5
+    ],
+    "databases": [
+      4,
+      3,
+      4
+    ]
+  }
+}
