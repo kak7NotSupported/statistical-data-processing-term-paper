@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Student {
     int groupID;
@@ -31,12 +32,17 @@ public class Student {
 
     }
 
+    public List<String> getSubjectList(){
+        System.out.println(marks.keySet());
+        return marks.keySet().stream().toList();
+    };
+
     public Integer getMarksCount(String subject){
         return marks.get(subject).size();
     }
 
 
-    public Float getAvrgMarks(String subject) {
+    public Float getAvrgMark(String subject) {
 
         float mark = 0;
         for (Integer a: marks.get(subject)){

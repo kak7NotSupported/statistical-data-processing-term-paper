@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -44,12 +45,18 @@ public class Main {
         /**
          * Импортирует всех студентов из jsonки в объекты, затем в ArrayList
          */
-        String path = new File("").getAbsolutePath();
-        System.out.println(path);
-        path = path + "\\src\\main\\resources\\data.json";
-        System.out.println(path);
+        String pathForIDE = new File("").getAbsolutePath();
 
-        var s = new Gson().fromJson(readFileAsString(path), JsonArray.class);
+        File jarFile = new File(String.valueOf(Main.class.getProtectionDomain().getCodeSource().getLocation()));
+
+        String pathToFile = jarFile.getPath().substring(6, jarFile.getPath().length() - jarFile.getName().length());
+
+        pathForIDE = pathForIDE + "\\src\\main\\resources\\data.json";
+        pathToFile = pathToFile + "\\data.json";
+
+        System.out.println(pathForIDE);
+
+        var s = new Gson().fromJson(readFileAsString(pathToFile), JsonArray.class);
 
         for (JsonElement student : s) {
             Student studentObj = new Gson().fromJson(student.toString(), Student.class);

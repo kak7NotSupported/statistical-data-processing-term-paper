@@ -3,6 +3,7 @@ package com.artmani.sod.items;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Group {
@@ -30,6 +31,10 @@ public class Group {
 
     }
 
+    public List<String> getSubjectList() {
+        return getStudents().get(0).getSubjectList();
+    }
+
     public static Group getGroupByID(int id) {
         /**
          * Получаем объект уже созданной группы по ID (Номеру группы)
@@ -45,25 +50,34 @@ public class Group {
     public Float getAvrgMark(String subject) {
         var marks = new ArrayList<Float>();
         float groupMarks = 0f;
-        for (Student s :getStudents()) {
-            float avrgMark = s.getAvrgMarks(subject);
+        for (Student s : getStudents()) {
+            float avrgMark = s.getAvrgMark(subject);
             groupMarks = groupMarks + avrgMark;
-            marks.add(s.getAvrgMarks(subject));
+            marks.add(s.getAvrgMark(subject));
         }
         return groupMarks / marks.size();
 
     }
 
-    public Float getAvrgMarksCount(String subject){
-        ArrayList<Float> marks = new ArrayList<Float>();
-        float groupMarks = 0f;
-        for (Student s: getStudents()){
-            float avrgMark = s.getAvrgMarks(subject);
-            groupMarks = groupMarks + avrgMark;
-            marks.add(avrgMark);
-        }
 
-        return groupMarks / marks.size();
+    public Student getStudentByName(String fullname) {
+        for (Student s : getStudents()) {
+            if (s.getFullName().contains(fullname)){
+                return s;
+            }
+        }
+        return null;
+    }
+
+
+    public Float getAvrgMarksCount(String subject) {
+
+        var marks = new ArrayList<Integer>();
+
+        for (Student s : getStudents()) {
+            marks.addAll(s.getMarks().get(subject));
+        }
+        return Float.valueOf(marks.size()) / Float.valueOf(getStudents().size());
     }
 
     private void tryToAddToList(int number) {
