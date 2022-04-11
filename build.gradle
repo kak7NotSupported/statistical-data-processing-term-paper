@@ -6,9 +6,10 @@ plugins {
 }
 
 group 'com.artmani'
-version '1.0'
+version '1.1'
 
 compileJava.options.encoding = 'UTF-8'
+tasks.build.dependsOn tasks.shadowJar
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'java'

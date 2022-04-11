@@ -8,7 +8,6 @@ import com.google.gson.JsonElement;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -84,7 +83,7 @@ public class Main {
         String data = "";
 
         try {
-            data = new String(Files.readAllBytes(Paths.get(fileName)));
+            data = new String(Files.readString(Paths.get(fileName)));
             return data;
         } catch (IOException e) {
             e.printStackTrace();
